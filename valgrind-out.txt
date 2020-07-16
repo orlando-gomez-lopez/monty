@@ -1,0 +1,147 @@
+==4984== Memcheck, a memory error detector
+==4984== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==4984== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+==4984== Command: ./monty bytecodes/00.m
+==4984== Parent PID: 1587
+==4984== 
+--4984-- 
+--4984-- Valgrind options:
+--4984--    --leak-check=full
+--4984--    --show-leak-kinds=all
+--4984--    --track-origins=yes
+--4984--    --verbose
+--4984--    --log-file=valgrind-out.txt
+--4984-- Contents of /proc/version:
+--4984--   Linux version 3.13.0-170-generic (buildd@lcy01-amd64-001) (gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.4) ) #220-Ubuntu SMP Thu May 9 12:40:49 UTC 2019
+--4984-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-rdtscp-sse3-avx
+--4984-- Page sizes: currently 4096, max supported 4096
+--4984-- Valgrind library directory: /usr/lib/valgrind
+--4984-- Reading syms from /home/vagrant/monty/monty
+--4984-- Reading syms from /lib/x86_64-linux-gnu/ld-2.19.so
+--4984--   Considering /lib/x86_64-linux-gnu/ld-2.19.so ..
+--4984--   .. CRC mismatch (computed aedc220e wanted 13895c11)
+--4984--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.19.so ..
+--4984--   .. CRC is valid
+--4984-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--4984--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--4984--   .. CRC mismatch (computed fed8e6c5 wanted e6be554a)
+--4984--    object doesn't have a symbol table
+--4984--    object doesn't have a dynamic symbol table
+--4984-- Scheduler: using generic scheduler lock implementation.
+--4984-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==4984== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-4984-by-vagrant-on-???
+==4984== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-4984-by-vagrant-on-???
+==4984== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-4984-by-vagrant-on-???
+==4984== 
+==4984== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==4984== don't want to do, unless you know exactly what you're doing,
+==4984== or are doing some strange experiment):
+==4984==   /usr/lib/valgrind/../../bin/vgdb --pid=4984 ...command...
+==4984== 
+==4984== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==4984==   /path/to/gdb ./monty
+==4984== and then give GDB the following command
+==4984==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=4984
+==4984== --pid is optional if only one valgrind process is running
+==4984== 
+--4984-- REDIR: 0x4019d70 (ld-linux-x86-64.so.2:strlen) redirected to 0x380764b1 (???)
+--4984-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--4984--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--4984--   .. CRC mismatch (computed 4bcdfe99 wanted 3143e841)
+--4984--    object doesn't have a symbol table
+--4984-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--4984--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--4984--   .. CRC mismatch (computed 3df18bf1 wanted 14fefe1c)
+--4984--    object doesn't have a symbol table
+==4984== WARNING: new redirection conflicts with existing -- ignoring it
+--4984--     old: 0x04019d70 (strlen              ) R-> (0000.0) 0x380764b1 ???
+--4984--     new: 0x04019d70 (strlen              ) R-> (2007.0) 0x04c2e1a0 strlen
+--4984-- REDIR: 0x4019b20 (ld-linux-x86-64.so.2:index) redirected to 0x4c2dd50 (index)
+--4984-- REDIR: 0x4019d40 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c2f2f0 (strcmp)
+--4984-- REDIR: 0x401aa90 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c31da0 (mempcpy)
+--4984-- Reading syms from /lib/x86_64-linux-gnu/libc-2.19.so
+--4984--   Considering /lib/x86_64-linux-gnu/libc-2.19.so ..
+--4984--   .. CRC mismatch (computed 8932cdd8 wanted 3aceb420)
+--4984--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so ..
+--4984--   .. CRC is valid
+--4984-- REDIR: 0x4ec4070 (libc.so.6:strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--4984-- REDIR: 0x4ec6360 (libc.so.6:strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--4984-- REDIR: 0x4ec3840 (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--4984-- REDIR: 0x4ec1ad0 (libc.so.6:rindex) redirected to 0x4c2da30 (rindex)
+--4984-- REDIR: 0x4ebfdd0 (libc.so.6:strlen) redirected to 0x4c2e0e0 (strlen)
+--4984-- REDIR: 0x4eb9a80 (libc.so.6:malloc) redirected to 0x4c2ab10 (malloc)
+--4984-- REDIR: 0x4ec8a90 (libc.so.6:__GI_memcpy) redirected to 0x4c2fc90 (__GI_memcpy)
+--4984-- REDIR: 0x4ec2720 (libc.so.6:__GI_strstr) redirected to 0x4c32030 (__strstr_sse2)
+==4984== Conditional jump or move depends on uninitialised value(s)
+==4984==    at 0x4EA5F32: getdelim (iogetdelim.c:63)
+==4984==    by 0x400D36: _read (in /home/vagrant/monty/monty)
+==4984==    by 0x400991: main (in /home/vagrant/monty/monty)
+==4984==  Uninitialised value was created by a stack allocation
+==4984==    at 0x400B41: _read (in /home/vagrant/monty/monty)
+==4984== 
+--4984-- REDIR: 0x4ec2f20 (libc.so.6:memchr) redirected to 0x4c2f390 (memchr)
+--4984-- REDIR: 0x4ebe380 (libc.so.6:strcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--4984-- REDIR: 0x4f7aa80 (libc.so.6:__strcmp_ssse3) redirected to 0x4c2f1b0 (strcmp)
+--4984-- REDIR: 0x4ecadd0 (libc.so.6:strchrnul) redirected to 0x4c319b0 (strchrnul)
+--4984-- REDIR: 0x4eba120 (libc.so.6:free) redirected to 0x4c2bd80 (free)
+==4984== 
+==4984== HEAP SUMMARY:
+==4984==     in use at exit: 766 bytes in 6 blocks
+==4984==   total heap usage: 7 allocs, 1 frees, 790 bytes allocated
+==4984== 
+==4984== Searching for pointers to 6 not-freed blocks
+==4984== Checked 76,896 bytes
+==4984== 
+==4984== 15 bytes in 1 blocks are definitely lost in loss record 1 of 6
+==4984==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4984==    by 0x4EBFB49: strdup (strdup.c:42)
+==4984==    by 0x400981: main (in /home/vagrant/monty/monty)
+==4984== 
+==4984== 15 bytes in 1 blocks are definitely lost in loss record 2 of 6
+==4984==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4984==    by 0x4EBFB49: strdup (strdup.c:42)
+==4984==    by 0x400B78: _read (in /home/vagrant/monty/monty)
+==4984==    by 0x400991: main (in /home/vagrant/monty/monty)
+==4984== 
+==4984== 24 bytes in 1 blocks are indirectly lost in loss record 3 of 6
+==4984==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4984==    by 0x400A76: _push (in /home/vagrant/monty/monty)
+==4984==    by 0x400C1E: _read (in /home/vagrant/monty/monty)
+==4984==    by 0x400991: main (in /home/vagrant/monty/monty)
+==4984== 
+==4984== 48 (24 direct, 24 indirect) bytes in 1 blocks are definitely lost in loss record 4 of 6
+==4984==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4984==    by 0x400A76: _push (in /home/vagrant/monty/monty)
+==4984==    by 0x400C1E: _read (in /home/vagrant/monty/monty)
+==4984==    by 0x400991: main (in /home/vagrant/monty/monty)
+==4984== 
+==4984== 120 bytes in 1 blocks are definitely lost in loss record 5 of 6
+==4984==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4984==    by 0x4EA5F54: getdelim (iogetdelim.c:66)
+==4984==    by 0x400D36: _read (in /home/vagrant/monty/monty)
+==4984==    by 0x400991: main (in /home/vagrant/monty/monty)
+==4984== 
+==4984== 568 bytes in 1 blocks are still reachable in loss record 6 of 6
+==4984==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4984==    by 0x4EA537C: __fopen_internal (iofopen.c:73)
+==4984==    by 0x400B8D: _read (in /home/vagrant/monty/monty)
+==4984==    by 0x400991: main (in /home/vagrant/monty/monty)
+==4984== 
+==4984== LEAK SUMMARY:
+==4984==    definitely lost: 174 bytes in 4 blocks
+==4984==    indirectly lost: 24 bytes in 1 blocks
+==4984==      possibly lost: 0 bytes in 0 blocks
+==4984==    still reachable: 568 bytes in 1 blocks
+==4984==         suppressed: 0 bytes in 0 blocks
+==4984== 
+==4984== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
+==4984== 
+==4984== 1 errors in context 1 of 5:
+==4984== Conditional jump or move depends on uninitialised value(s)
+==4984==    at 0x4EA5F32: getdelim (iogetdelim.c:63)
+==4984==    by 0x400D36: _read (in /home/vagrant/monty/monty)
+==4984==    by 0x400991: main (in /home/vagrant/monty/monty)
+==4984==  Uninitialised value was created by a stack allocation
+==4984==    at 0x400B41: _read (in /home/vagrant/monty/monty)
+==4984== 
+==4984== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
